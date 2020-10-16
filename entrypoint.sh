@@ -18,8 +18,8 @@ while getopts 'u:f:h' OPT; do
     esac
 done
 
-echo "==========Assets and Liabilities=========\n" >> result.txt
+echo "===Assets & Liabilities===\n" >> result.txt
 ledger -f $FILE_PATH balance assets liabilities >> result.txt
-echo "================Expenses=================\n" >> result.txt
+echo "==========Expenses========\n" >> result.txt
 ledger -f $FILE_PATH balance expenses >> result.txt
 cat result.txt | ./slackcat -u $SLACK_WEBHOOK_URL
