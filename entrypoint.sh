@@ -25,5 +25,5 @@ ledger -f $FILE_PATH balance assets liabilities >> result.txt
 # ledger -f $FILE_PATH balance expenses >> result.txt
 
 echo "==========Expenses This Month========\n" >> result.txt
-ledger -p "this month" register Expenses:日元 -f $FILE_PATH >> result.txt
+ledger -p "this month" cleared Expenses:日元 -f $FILE_PATH >> result.txt
 cat result.txt | ./slackcat -u $SLACK_WEBHOOK_URL
